@@ -15,6 +15,7 @@ function onSubmit(e) {
 	if (!email.value || !password.value) {
 		alert("Все поля должны быть заполнены.")
 	} else if (email.value && password.value) {
+		console.log(formResult);
 		formResult.email = "";
 		formResult.password = "";
 		e.currentTarget.reset() 
@@ -24,7 +25,6 @@ function onSubmit(e) {
 	password.value = formResult.password
 	
 	
-		
 	
 	}
 	
