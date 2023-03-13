@@ -1,5 +1,4 @@
 const counterValue = document.querySelector('#value')
-counterValue.textContent = 0
 
 const incrBtn = document.querySelector('[data-action="increment"]')
 

@@ -1,3 +1,5 @@
+const ingredientsRef = document.querySelector('#ingredients')
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
@@ -15,6 +17,5 @@ const liAddToIngredients= ingredients.map(elem => {
   return newLi
 })
 
-const ingredientsRef= document.querySelector('#ingredients').append(...liAddToIngredients)
-
+ingredientsRef.append(...liAddToIngredients)
 

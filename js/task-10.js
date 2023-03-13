@@ -3,6 +3,7 @@ const refs = {
   destroy: document.querySelector('[data-destroy]'),
   div: document.querySelector("#boxes"),
   number: document.querySelector('input'),
+  width: 30,
 }
 
 
@@ -14,20 +15,22 @@ function getRandomHexColor() {
 
 function createBoxes(amount) {
   const divsToRender = []
-  for (let i = 0, j = 30; i < amount; i += 1, j +=10){
-    const result = `<div style="width:${j}px; height: ${j}px; background-color:${getRandomHexColor()}"></div>`
+  for (let i = 0; i < amount; i += 1, refs.width += 10){
+    // refs.width=j
+    const result = `<div style="width:${refs.width}px; height: ${refs.width}px; background-color:${getRandomHexColor()}"></div>`
 
     divsToRender.push(result)
+    console.log('refs', refs.width);
   }
   return divsToRender.join("")
 }
-console.log(createBoxes(10));
+// console.log(createBoxes(10));
 
 refs.create.addEventListener("click", onCreate)
 function onCreate(e) {
   const toInner = createBoxes(refs.number.value)
   
-  refs.div.insertAdjacentHTML("afterbegin", toInner)
+  refs.div.insertAdjacentHTML("beforeend", toInner)
   
 }
 
